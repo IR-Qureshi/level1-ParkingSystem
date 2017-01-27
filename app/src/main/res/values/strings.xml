@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ParkingManagement</string>
+    <string name="sign_out">sign out</string>
 </resources>

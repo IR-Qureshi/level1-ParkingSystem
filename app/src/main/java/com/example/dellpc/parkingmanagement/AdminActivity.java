@@ -5,6 +5,11 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -30,15 +35,56 @@ public class AdminActivity extends AppCompatActivity {
     public static final String ANONYMOUS = "anonymous";
     private String mUsername;
 
+    //Buttons..
+    Button BTNparking;
+    Button BTNalloted;
+    Button BTNfeedback;
+    Button BTNlogout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
+        setContentView(R.layout.activity_admin);
         //main access point of our database
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseStorage = FirebaseStorage.getInstance();
+
+        BTNparking = (Button) findViewById(R.id.BTN_AdminParkView);
+        BTNalloted = (Button) findViewById(R.id.BTN_Admin_AllotView);
+        BTNfeedback = (Button) findViewById(R.id.BTN_AdminFBView);
+        BTNlogout = (Button) findViewById(R.id.BTN_Admin_Logout);
+
+        BTNparking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //set the parkingRemaining in fragment in framelayout.
+            }
+        });
+        BTNalloted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //set the parking alloted in fragment in frame layout.
+            }
+        });
+        BTNfeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //set the userfeed back in fragment in frame layout.
+            }
+        });
+        BTNlogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //signing out..
+                AuthUI.getInstance().signOut(AdminActivity.this);
+            }
+        });
+
+
+
+
 
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -106,6 +152,25 @@ public class AdminActivity extends AppCompatActivity {
     }
     private void onSignedOutCleanup() {
         mUsername = ANONYMOUS;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.sign_out_menu:
+                AuthUI.getInstance().signOut(this);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 
 
