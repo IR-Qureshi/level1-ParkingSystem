@@ -67,19 +67,25 @@ public class AdminActivity extends AppCompatActivity {
                 //set the parkingRemaining in fragment in framelayout.
                 mFragmentManager = getSupportFragmentManager();
                 mFragmentTransaction = mFragmentManager.beginTransaction();
-              //  mFragmentTransaction.replace(R.id.AdminframeLayout, new CompanyPostFragment()).commit();
+                mFragmentTransaction.replace(R.id.AdminframeLayout, new ParkLeftFragment()).commit();
             }
         });
         BTNalloted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //set the parking alloted in fragment in frame layout.
+                mFragmentManager = getSupportFragmentManager();
+                mFragmentTransaction = mFragmentManager.beginTransaction();
+                mFragmentTransaction.replace(R.id.AdminframeLayout, new ParkAllotedFrament()).commit();
             }
         });
         BTNfeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //set the userfeed back in fragment in frame layout.
+                mFragmentManager = getSupportFragmentManager();
+                mFragmentTransaction = mFragmentManager.beginTransaction();
+                mFragmentTransaction.replace(R.id.AdminframeLayout, new UserFBFragment()).commit();
             }
         });
         BTNlogout.setOnClickListener(new View.OnClickListener() {
