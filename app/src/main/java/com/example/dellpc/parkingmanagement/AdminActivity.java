@@ -2,6 +2,8 @@ package com.example.dellpc.parkingmanagement;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,6 +36,9 @@ public class AdminActivity extends AppCompatActivity {
     private FirebaseStorage mFirebaseStorage;
     public static final String ANONYMOUS = "anonymous";
     private String mUsername;
+    //fragments..
+    FragmentManager mFragmentManager;
+    FragmentTransaction mFragmentTransaction;
 
     //Buttons..
     Button BTNparking;
@@ -60,6 +65,9 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //set the parkingRemaining in fragment in framelayout.
+                mFragmentManager = getSupportFragmentManager();
+                mFragmentTransaction = mFragmentManager.beginTransaction();
+              //  mFragmentTransaction.replace(R.id.AdminframeLayout, new CompanyPostFragment()).commit();
             }
         });
         BTNalloted.setOnClickListener(new View.OnClickListener() {
