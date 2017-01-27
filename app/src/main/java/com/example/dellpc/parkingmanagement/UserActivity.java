@@ -2,12 +2,17 @@ package com.example.dellpc.parkingmanagement;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -17,7 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity implements View.OnClickListener{
     //Request code
     //It is a flag which we'd placed uiAuth while we're logging in from diff UI.
     public static final int RC_SIGN_IN = 1;
@@ -32,6 +37,15 @@ public class UserActivity extends AppCompatActivity {
     private FirebaseStorage mFirebaseStorage;
     public static final String ANONYMOUS = "anonymous";
     private String mUsername;
+    TextView Lslot1, Lslot2, Lslot3, Lslot4, Lslot5, Lslot6;
+    TextView Rslot1, Rslot2, Rslot3, Rslot4, Rslot5, Rslot6;
+    //fragments..
+    private FragmentManager mFragmentManager;
+    private FragmentTransaction mFragmentTransaction;
+    private FrameLayout frameLayout;
+
+
+
 
 
     @Override
@@ -72,6 +86,45 @@ public class UserActivity extends AppCompatActivity {
 
             }
         };
+        Lslot1 = (TextView) findViewById(R.id.L_slot1);
+        Lslot1.setOnClickListener(this);
+        Lslot2 = (TextView) findViewById(R.id.L_slot2);
+        Lslot2.setOnClickListener(this);
+        Lslot3 = (TextView) findViewById(R.id.L_slot3);
+        Lslot3.setOnClickListener(this);
+        Lslot4 = (TextView) findViewById(R.id.L_slot4);
+        Lslot4.setOnClickListener(this);
+        Lslot5 = (TextView) findViewById(R.id.L_slot5);
+        Lslot5.setOnClickListener(this);
+        Lslot6 = (TextView) findViewById(R.id.L_slot6);
+        Lslot6.setOnClickListener(this);
+        Rslot1 = (TextView) findViewById(R.id.R_slot1);
+        Rslot1.setOnClickListener(this);
+        Rslot2 = (TextView) findViewById(R.id.R_slot2);
+        Rslot2.setOnClickListener(this);
+        Rslot3 = (TextView) findViewById(R.id.R_slot3);
+        Rslot3.setOnClickListener(this);
+        Rslot4 = (TextView) findViewById(R.id.R_slot4);
+        Rslot4.setOnClickListener(this);
+        Rslot5 = (TextView) findViewById(R.id.R_slot5);
+        Rslot5.setOnClickListener(this);
+        Rslot6 = (TextView) findViewById(R.id.R_slot6);
+        Rslot6.setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View v) {
+
+        //removing the background image of userAvtivity frame layout
+//        frameLayout = (FrameLayout) findViewById(R.id.activity_user);
+//        frameLayout.setBackgroundResource(0);
+//
+//        mFragmentManager = getSupportFragmentManager();
+//        mFragmentTransaction = mFragmentManager.beginTransaction();
+//        mFragmentTransaction.replace(R.id.activity_user, new UserBookFragment()).commit();
+
+        Intent intent = new Intent(UserActivity.this, UserBookActivity.class);
+        startActivity(intent);
+
 
     }
 
