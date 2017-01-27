@@ -26,4 +26,16 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
+
+    //firebase
+    compile 'com.google.firebase:firebase-database:9.6.1'
+    compile 'com.google.firebase:firebase-auth:9.6.1'
+    compile 'com.google.firebase:firebase-storage:9.6.1'
+    compile 'com.google.firebase:firebase-messaging:9.6.1'
+    // FirebaseUI Auth only
+    compile 'com.firebaseui:firebase-ui-auth:0.6.1'
+    //displaying the image
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+
 }
+apply plugin: 'com.google.gms.google-services'
