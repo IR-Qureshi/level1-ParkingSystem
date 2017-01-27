@@ -100,6 +100,7 @@ public class AdminActivity extends AppCompatActivity {
             mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
         }
     }
+
     private void onSignedInInitialize(String username) {
         mUsername = username;
     }
