@@ -9,14 +9,16 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.List;
+
 /**
  * Created by dell pc on 28-Jan-17.
  */
 
 public class UserBookAdapter extends ArrayAdapter<UserBookClass> {
 
-    public UserBookAdapter(Context context, int resource, int textViewResourceId, UserBookClass[] objects) {
-        super(context, resource, textViewResourceId, objects);
+    public UserBookAdapter(Context context, int resource,List<UserBookClass> objects) {
+        super(context, resource,objects);
     }
 
     @NonNull
