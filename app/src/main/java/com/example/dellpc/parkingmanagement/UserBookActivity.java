@@ -1,6 +1,7 @@
 package com.example.dellpc.parkingmanagement;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -39,10 +40,7 @@ public class UserBookActivity extends AppCompatActivity {
     private int minute;
     private TimePickerDialog mTimePicker;
     UserBookClass userBookClass = new UserBookClass();
-    //fragments..
-    private FragmentManager mFragmentManager;
-    private FragmentTransaction mFragmentTransaction;
-    private FrameLayout frameLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,12 +109,9 @@ public class UserBookActivity extends AppCompatActivity {
                 startTime.setText("");
                 endTime.setText("");
 
-                frameLayout = (FrameLayout) findViewById(R.id.userBookFrame);
-                frameLayout.setBackgroundResource(0);
+                Intent intent = new Intent(UserBookActivity.this, UserFBActivity.class);
+                startActivity(intent);
 
-                mFragmentManager = getSupportFragmentManager();
-                mFragmentTransaction = mFragmentManager.beginTransaction();
-                mFragmentTransaction.replace(R.id.userBookFrame, new UserFBFragment()).commit();
             }
         });
 
