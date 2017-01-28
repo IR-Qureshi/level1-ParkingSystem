@@ -8,13 +8,15 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.List;
+
 /**
  * Created by dell pc on 28-Jan-17.
  */
 
 public class UserFBAdapter extends ArrayAdapter<UerFBClass>{
-    public UserFBAdapter(Context context, int resource, int textViewResourceId, UerFBClass[] objects) {
-        super(context, resource, textViewResourceId, objects);
+    public UserFBAdapter(Context context, int resource,List<UerFBClass> objects) {
+        super(context, resource, objects);
     }
 
     @NonNull
