@@ -5,47 +5,50 @@ package com.example.dellpc.parkingmanagement;
  */
 
 public class UserBookClass {
-    String Username;
-    String Slotno;
-    String StartTime;
-    String EndTime;
+    String username;
+    String slotno;
+    String startTime;
+    String endTime;
 
-    public UserBookClass(String mUserName, String mSlotno, String mStarttime, String mEndTime){
-        Username = mUserName;
-        Slotno = mSlotno;
-        StartTime = mStarttime;
-        EndTime = mEndTime;
+    public UserBookClass(){
+
+    }
+
+    public UserBookClass(String username, String slotno, String startTime, String endTime){
+        this.username = username;
+        this.slotno = slotno;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public String getSlotno() {
-        return Slotno;
+        return slotno;
     }
 
     public String getStartTime() {
-        return StartTime;
+        return startTime;
     }
 
     public String getEndTime() {
-        return EndTime;
+        return endTime;
     }
-
-    public void setUsername(String username) {
-        Username = username;
-    }
-
-    public void setSlotno(String slotno) {
-        Slotno = slotno;
-    }
-
-    public void setStartTime(String startTime) {
-        StartTime = startTime;
-    }
-
-    public void setEndTime(String endTime) {
-        EndTime = endTime;
-    }
+    //    public void setUsername(String username) {
+//        Username = username;
+//    }
+//
+//    public void setSlotno(String slotno) {
+//        Slotno = slotno;
+//    }
+//
+//    public void setStartTime(String startTime) {
+//        StartTime = startTime;
+//    }
+//
+//    public void setEndTime(String endTime) {
+//        EndTime = endTime;
+//    }
 }

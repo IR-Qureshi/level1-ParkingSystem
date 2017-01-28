@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dellpc.parkingmanagement.UserBookFragment">
+    tools:context="com.example.dellpc.parkingmanagement.UserBookActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,5 +41,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="post"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:id="@+id/BTNpost"/>
 </FrameLayout>
